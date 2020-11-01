@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-todo.css">
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet"> 
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <h4 class="nadpis1">Todo list</h4>
+        <h1>My simple Todo list</h1>
+
+        <form>
+            <input type="text" id="ukol" value="poznamka" size="50">
+            <input type="button" id="tlacitko" value="Press">
+        </form>
+
+        <div class="container-list">
+            <ol>
+                <li class='task' id='todo1'>Buy milk <button class='button-erase' id='button1'>Done</button></li>
+                <li class='task' id='todo5'>Buy pastry<button class='button-erase' id='button5'>Done</button></li>
+            </ol>
+        </div>
+    </div>
+ 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
