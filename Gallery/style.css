@@ -1,74 +1,105 @@
 * {
     margin:0;
     padding:0;
+    box-sizing: border-box;
 }
+/* body {
+    background-color: rgb(171, 179, 186);
+} */
 .container{ 
-    background: linear-gradient(to right,  	#707070, #F5F5F5,  	#707070); 
-    background-repeat: no-repeat;
-    background-size: cover;	
-    height:650px;
-    padding:0; margin:0;
-    top:0;
+    background: linear-gradient(217deg, rgba(89, 89, 89,.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(128, 128, 128,.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(166, 166, 166,.8), rgba(0,0,255,0) 70.71%);
+    height:500px;
     }
+
+@media only screen and (min-width: 600px){
+    .container{
+        height:650px;
+    }
+}    
 
 .main {
     position:relative;
-    width: 700px;
-    height:450px;
+    max-width: 600px;
+    overflow:hidden;
     margin: 0 auto;
     top:20px;
     background-color: white;  
     box-shadow: 0px 0px 19px 1px rgba(0,0,0,0.75); 
+    display: flex;
 }
 .foto {
-    width: 600px;
-    height:450px;
-    margin:auto;
-    padding:0;
+    width: 80%;
+    margin:auto; 
+}
+.foto img{
+    width:100%;
+ 
 }
 .button1 {
-    position:absolute;
-    top:230px; 
-    left:20px;
+    position:relative;  
+}
+.button2 {
+    position:relative;
+    transform: rotate(0.5turn);
+}
+@media only screen and (min-width: 600px){
+    .button1 {
+        left:15px;
+    }
+    .button2 {
+        right:15px;
+    }
 }
 .button1:hover, .button2:hover {
     opacity: 0.5;
     cursor: pointer;
 }
 
-.button2 {
-    position:absolute;
-    top:227px; 
-    right:20px;
-    transform: rotate(0.5turn);
-}
-
 .gray-container {
-    height:100px;
+    height:55px;
     box-sizing: border-box;
     background-color:rgba(0,0,0,0.65);
     position:relative;
-    bottom:104px;
+    bottom:53px;
     color: silver;
     font-family: 'Raleway', sans-serif;
-    padding:15px ;
+    padding:10px ;
     cursor: pointer;
 }
-#photo-title{
-    font-size: 1.4rem; 
-    padding-bottom:5px;
-}
-#photo-description{
-    font-size: 0.9rem;
-} 
 
+#photo-title{
+    font-size: 1rem; 
+    padding-bottom:3px;
+}
+
+#photo-description{
+    font-size: 0.7rem;
+} 
+@media only screen and (min-width: 600px){
+    .gray-container {
+        height:80px;
+        padding:15px;
+        bottom:84px;
+    }
+    #photo-title{
+        font-size: 1.4rem;
+    }
+    #photo-description{
+        font-size: 0.9rem;
+    } 
+}
 #container-thumbnails {
+    display: none;
+}
+@media only screen and (min-width: 600px){
+    #container-thumbnails {
     display: flex;
-    display:row;
+    justify-content:center;
+    top:25px;
     position:relative;
-    top:15px;
-    width: 700px;
-    justify-content:center;  
+    }
 }
 
 .box {
@@ -82,7 +113,7 @@
     box-shadow: 0px 9px 15px 0px rgba(0,0,0,0.75);
 }
 .title-thumbnail {
-    height:35px;
+    height:43px;
     display: none;
     position: absolute;
     background-color:rgba(0,0,0,0.65);

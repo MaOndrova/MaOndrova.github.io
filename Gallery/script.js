@@ -88,3 +88,13 @@ $('.box').click((event) => {
 $('.gray-container').click(() => {
   $('.gray-container').hide();
 });
+
+
+$( window ).resize(function() {
+  let imgHeight = $('.foto img').height();
+  $('.main').height(imgHeight);
+});
+
+$(window).on('load', function(){   
+  let imgHeight = $('.foto img').height();
+  $('.main').height(imgHeight);});
