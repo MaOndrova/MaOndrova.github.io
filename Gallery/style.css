@@ -3,21 +3,13 @@
     padding:0;
     box-sizing: border-box;
 }
-/* body {
-    background-color: rgb(171, 179, 186);
-} */
+
 .container{ 
     background: linear-gradient(217deg, rgba(89, 89, 89,.8), rgba(255,0,0,0) 70.71%),
             linear-gradient(127deg, rgba(128, 128, 128,.8), rgba(0,255,0,0) 70.71%),
             linear-gradient(336deg, rgba(166, 166, 166,.8), rgba(0,0,255,0) 70.71%);
-    height:500px;
-    }
-
-@media only screen and (min-width: 600px){
-    .container{
-        height:650px;
-    }
-}    
+    height:650px;
+    }  
 
 .main {
     position:relative;
@@ -58,11 +50,11 @@
 }
 
 .gray-container {
-    height:55px;
+    height:65px;
     box-sizing: border-box;
     background-color:rgba(0,0,0,0.65);
     position:relative;
-    bottom:53px;
+    bottom:65px;
     color: silver;
     font-family: 'Raleway', sans-serif;
     padding:10px ;
