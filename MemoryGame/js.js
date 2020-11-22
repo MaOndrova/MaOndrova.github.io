@@ -27,11 +27,13 @@ function flipCard() {
         music.play();
     }
 }
+
 function checkForMatch(){
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
     isMatch ? disableCards() : unflipCards();
 }
+
 function disableCards(){
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
@@ -60,13 +62,11 @@ function resetBoard(){
     });
 }) ();
 
-function shuffleRestart(){  
-    setTimeout(() => {
-        cards.forEach(card =>{
-            let randomPos = parseInt(Math.random() * 12);
-            card.style.order = randomPos;
-        });
-    }, 1600);
+function shuffleRestart(){     
+    cards.forEach(card =>{
+        let randomPos = parseInt(Math.random() * 12);
+        card.style.order = randomPos;
+    });   
 };
 
 cards.forEach(cards => cards.addEventListener('click', flipCard));
@@ -80,9 +80,10 @@ function Restart(){
     }); 
     cards.forEach(cards => cards.addEventListener('click', flipCard));
     document.getElementById('counting').innerText = 'Number of attempts: ' + numberOfAttempts; 
-   
-    shuffleRestart();
-   
+    
+    setTimeout(() => {
+        shuffleRestart();  
+    }, 1000); 
 }
 
 function sound(src) {
