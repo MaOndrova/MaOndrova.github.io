@@ -75,12 +75,13 @@ body{
     width:80px;
     align-self: center;
     border-radius:5px;
-    background-color: #4d194d;
+    background-color: #853d85;
     color:white;
     box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
 }
 #btn:hover {
     cursor: pointer;
+    background-color: #692869;
 }
 #btn:active {
     box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
