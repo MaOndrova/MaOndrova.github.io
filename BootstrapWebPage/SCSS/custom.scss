@@ -1,0 +1,63 @@
+$theme-colors: (
+    "primary":   #e6ac00,
+    "secondary": #1f1f1f
+);
+
+@import "../bootstrap/scss/bootstrap.scss";
+
+body {
+    padding:0;
+    margin:0;
+}
+.navbar{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    z-index: 3;
+    background-color: #e6ac00;
+    .navbar-brand h3 {
+        font-weight: 100;
+    }
+
+    .nav-item {
+        font-size: 1.4rem;
+    }
+ 
+}
+@media(max-width: 768px){
+    .navbar h1{
+        font-size:1.2rem;
+       
+    }
+
+} 
+
+#home{
+    background: url(../images/main4.webp) bottom center / cover no-repeat;
+    min-height: 750px;
+    position: relative;
+    overflow: hidden;
+
+    #header {
+        z-index: 2;
+    }
+    #overlay {
+        background: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    h1 {
+        font-family: "Questrial", sans-serif;
+        line-height: 1;
+    }
+    #rezervation {
+        border-radius: 2rem;
+    }
+
+}
+
