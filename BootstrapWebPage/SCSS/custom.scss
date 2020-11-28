@@ -25,17 +25,10 @@ body {
     }
  
 }
-@media(max-width: 768px){
-    .navbar h1{
-        font-size:1.2rem;
-       
-    }
-
-} 
 
 #home{
     background: url(../images/main4.webp) bottom center / cover no-repeat;
-    min-height: 750px;
+    min-height: 700px;
     position: relative;
     overflow: hidden;
 
