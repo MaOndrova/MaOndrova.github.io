@@ -11,6 +11,7 @@ body{
     margin: auto;
     position: relative;
     font-family: 'Texturina', serif;
+    max-width: 1500px;
 }
 
 h1{
@@ -90,7 +91,7 @@ h1{
     background-color: rgba(0, 0, 0, 0.9);
     width: 100%;
     height: 100%;                   
-    transform: translate(460px, -100px) rotate(180deg);                     
+    transform: translate(460px, -300px) rotate(180deg);                     
     transition: transform .3s; 
     z-index: 4;
 }
@@ -153,14 +154,12 @@ h1{
     background-image: url('images/memoryGame.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
 }
 
 .gallery{
     background-image: url('images/gallery.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
 }
 .bootstrap {
     background-image: url('images/boot.png');

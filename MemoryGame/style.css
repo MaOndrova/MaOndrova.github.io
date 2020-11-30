@@ -5,10 +5,11 @@
 }
 body{
     height: 100vh;
+    max-width: 1900px;
     background-color: #b3b3b3;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 .memory-game{
     margin-top: 20px;
@@ -22,7 +23,7 @@ body{
     display: flex;
     align-items: center;
     width: calc(16.666% - 10px);
-    height: 30%;
+    height: 33vh;
     margin:5px;
     border-radius: 5px;
     position: relative;
