@@ -16,12 +16,13 @@
         <h1>My simple Todo list</h1>
 
         <form>
+            <input type="date" name="date" id="datum" required pattern="\d{4}-\d{2}-\d{2}">
             <input type="text" id="ukol" value="annotation" size="50">
-            <input type="button" id="tlacitko" value="Press">
+            <input type="button" id="tlacitko" value="Press">          
         </form>
 
         <div class="container-list">
-            <ol>
+            <ol id="list">
                 <li class='task' id='todo1'>Buy milk <button class='button-erase' id='button1'>Done</button></li>
                 <li class='task' id='todo5'>Buy pastry<button class='button-erase' id='button5'>Done</button></li>
             </ol>

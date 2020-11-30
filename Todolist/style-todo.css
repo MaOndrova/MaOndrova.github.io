@@ -23,7 +23,6 @@ h1 {
 .container-list{
     width:50%;
     margin:auto;
-    border: 1px solid black;
     font-family: 'Space Mono', monospace;
 }
 ol {
@@ -40,7 +39,7 @@ ol {
 #tlacitko:hover{
     cursor: pointer;
 }
-#ukol {
+#ukol, #datum {
     padding:5px;
     border-radius: 3px;
     font-family: 'Space Mono', monospace;
