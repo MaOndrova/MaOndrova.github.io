@@ -16,6 +16,8 @@ body{
     width:75%;
     height: 640px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap:wrap; 
     perspective: 1000px;  /*Give a 3D-positioned element some perspective*/
 }  
