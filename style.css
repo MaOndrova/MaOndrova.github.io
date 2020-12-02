@@ -10,12 +10,13 @@ body{
     height:100vh;
     margin: auto;
     position: relative;
-    font-family: 'Texturina', serif;
+    font-family: 'Kalam', cursive;
     max-width: 1500px;
 }
 
 h1{
     color: whitesmoke;
+    font-family: 'Permanent Marker', cursive;
 }
 .header{
     position: relative;
@@ -66,6 +67,7 @@ h1{
     background-color:rgb(58, 51, 51);
     position:relative;
     overflow: hidden;
+
 }
 @media screen and (max-width:420px){
  .box{
@@ -79,6 +81,7 @@ h1{
     min-height:20vh;
  }
 }
+
 
 .animationBox::before{
     content: '';
@@ -95,30 +98,46 @@ h1{
     transition: transform .3s; 
     z-index: 4;
 }
-
-
 .animationBox:hover::before{
     transform: translate(0px,0px);       
     transition: all 0.4s ease-in-out;  
 }
+.box-caption{
+    opacity:0;
+    position: absolute;
+    top:20px;
+    bottom:20px;
+    right:15px;
+    left:15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top:4px double white;
+    border-bottom:4px double white;
+    transition:all .4s linear;
+    z-index: 50;
+}
+.animationBox:hover .box-caption{
+    opacity: 1;
+}
 
 .goToProject{
+    border:1px solid white;
+    padding: 5px;
+    border-radius: 5px;;
     text-decoration: none;
     font-weight: bold;
-    position: absolute;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
     opacity:0;
     color:white;
     font-size: 1.5rem;
     transform: scale(1.7);                     
     transition: transform .8s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     z-index: 99;
+}
+@media screen and (max-width:600px){
+    .goToProject{
+       font-size:1rem; 
+    }
 }
 
 .animationBox:hover .goToProject{
@@ -126,6 +145,7 @@ h1{
     transform: scale(1); 
     transition: transform .4s;
 }
+
 
 .caption{
     background-color: rgba(0, 0, 0, 0.8);
@@ -149,22 +169,47 @@ h1{
        font-size:16px; 
        height: 50px;
     }
-   }
-.memoryGame{
+}
+
+.background-memory{
     background-image: url('images/memoryGame.png');
     background-position: center;
     background-repeat: no-repeat;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+}
+.box:hover .background-memory {
+    filter:blur(5px);
 }
 
-.gallery{
+.background-gallery{
     background-image: url('images/gallery.png');
     background-position: center;
     background-repeat: no-repeat;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
 }
-.bootstrap {
+.box:hover .background-gallery {
+    filter:blur(5px);
+}
+.background-bootstrap {
     background-image: url('images/boot.png');
     background-position: center;
     background-repeat: no-repeat;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+}
+.box:hover .background-bootstrap {
+    filter:blur(5px);
 }
 /* --------------------Footer ---------------------------------*/
 .footer{
