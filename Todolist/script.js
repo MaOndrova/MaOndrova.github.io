@@ -1,42 +1,73 @@
-document.getElementById('datum').valueAsDate = new Date();
+let number = 0;
+
+$(document).ready(function(){
+ //localStorage.removeItem("pole");
+  document.getElementById('datum').valueAsDate = new Date();
+  reload();
+});
+
+function reload(){
+  pole = JSON.parse(localStorage.getItem('pole')) || [];
+  pole.forEach(myFunction);}
 
 
+function myFunction(item, index) {
+  $(".list").append("<li class='task' id=todo"+index+">"+item+" "+"</li>");
+  $("#todo"+index).append("<button class='button-erase' id="+index+"><img src='right-tick.svg' alt='Done' width='17px'></button>");
+  number = index;
+} 
+
+function clear(){
+    $('.list li').each(function() {
+    $(this).remove();
+  }) 
+}
+
+function SaveDataToLocalStorage(data)
+{
+    pole = JSON.parse(localStorage.getItem('pole')) || [];
+    pole.push(data);
+    localStorage.setItem('pole', JSON.stringify(pole));
+}
 
 
-let count = 1;
 $("#tlacitko").on("click", () => {
-    count++;
+    number++;
     let komentar = $("#ukol").val();
-    let den = $("#datum").val()
-
-    var obj = {
-      text: komentar,
-        datum: den,
-    }    
-    localStorage.setItem("itemname"+count, JSON.stringify(obj)); // Save the obj as string
-    var item = JSON.parse(localStorage.getItem("itemname"+count));
-    $("ol").append("<li class='task' id=todo"+count+">"+item.datum+" " +item.text+"</li>");
-    $("#todo"+count).append("<button class='button-erase' id="+count+">Done</button>");
-    console.log(item.datum); 
+    let den = $("#datum").val()   
+    SaveDataToLocalStorage(den + " " + komentar);
+    $(".list").append("<li class='task' id=todo"+number+">"+den+" " +komentar+"</li>");
+    $("#todo"+number).append("<button class='button-erase' id="+number+"><img src='right-tick.svg' alt='Done' width='17px'></button>");
   });
 
- 
-// function createMenuItem(name) {
-//   let li = document.createElement('li');
-//   li.textContent = name;
-//   return li;
-// }
+  function RemoveItem(id){
+    pole = JSON.parse(localStorage.getItem('pole')) || [];
+    deletedItem = pole[id];
 
-// document.getElementById('tlacitko').addEventListener('click', function(){
-//   let komentar = document.getElementById("ukol").value;
-//   let den = document.getElementById('datum').value;
-//   const menu = document.querySelector('#list');
-//   menu.appendChild(createMenuItem(den + ' '+ komentar));
-// });
+    if (id > -1) {
+      pole.splice(id, 1);
+    }
+    localStorage.setItem('pole', JSON.stringify(pole));
+    clear();
+    reload();
+
+  }
 
   $('.container-list').on('click', '.button-erase', (event) => {
   var radek = event.target.id;
-  $("#"+radek).closest('.task').remove();
-  $("#"+radek).remove();
+  RemoveItem(radek);
+  $(" li #todo"+radek).remove();  
+});
 
+// Changing background color
+document.getElementById('todocolor').addEventListener('change', function(){
+  let color = this.value;
+  document.getElementById('main').style.backgroundColor = color;
+});
+
+//Shutdown bubling
+$(".btn_buble").on('click', function(){
+  $('.buble3, .buble4').toggleClass(' bubbling34');
+  $('.buble1, .buble2').toggleClass(' bubbling12');
+  $('.buble5, .buble6').toggleClass(' bubbling56');
 });

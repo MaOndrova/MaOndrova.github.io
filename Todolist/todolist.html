@@ -11,24 +11,41 @@
 </head>
 
 <body>
-    <div class="main">
+    <div id="main">
         <h4 class="nadpis1">Todo list</h4>
-        <h1>My simple Todo list</h1>
+        <h1 class="nadpis2">My simple Todo list</h1>
+        
+        <input type="color" id="todocolor" value="#8080c0">
+       
 
         <form>
-            <input type="date" name="date" id="datum" required pattern="\d{4}-\d{2}-\d{2}">
-            <input type="text" id="ukol" value="annotation" size="50">
-            <input type="button" id="tlacitko" value="Press">          
+            <input type="date" name="date" id="datum" required pattern="\d{4}-\d{2}-\d{2}"><br>
+            <input type="text" id="ukol" value="" size="50">
+            <input type="button" id="tlacitko" value="Add">          
         </form>
 
         <div class="container-list">
-            <ol id="list">
-                <li class='task' id='todo1'>Buy milk <button class='button-erase' id='button1'>Done</button></li>
-                <li class='task' id='todo5'>Buy pastry<button class='button-erase' id='button5'>Done</button></li>
-            </ol>
+            <ul class="list0"> 
+                <li class="task">Be positive</li>
+                <li class="task">Be happy with what you have</li>
+            </ul>
+            <ul class="list">
+
+            </ul>
         </div>
     </div>
- 
+    <div class="buble_container">
+        <div class="buble1 bubbling12"></div>
+        <div class="buble2 bubbling12"></div>  
+        <div class="buble3 bubbling34"></div>
+        <div class="buble4 bubbling34"></div>
+        <div class="buble5 bubbling56"></div>
+        <div class="buble6 bubbling56"></div>  
+    </div>   
+        <div class="btn_buble">
+            <img src="btn_buble.svg" alt="Shut down bubling">
+            <div class='wave -one'></div>
+        </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="script.js"></script>
