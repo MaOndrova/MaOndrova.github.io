@@ -5,118 +5,149 @@
 }
 
 body {
-
-    background: linear-gradient(to bottom, rgba(0, 141, 210, 0.63) 0%, rgba(0, 0, 0, 0) 100% );
-    height: 100vh;
+  background: linear-gradient(to bottom, rgba(0, 141, 210, 0.63) 0%, rgba(0, 0, 0, 0) 100% );
+  height: 100vh;
 }
+
 #main {
-    position: relative;
-    text-align: center;
-    width:60%;
-    margin:auto;
-    margin-top:100px;
-    background-color: #8080c0;
-    color:black;   
-    box-shadow: 0px 0px 19px 0px rgba(50, 50, 50, 0.78);
-    border-radius: 7px;
-}
-h1 {
-    font-family: 'BioRhyme', serif;
-}
-.nadpis1{
-    text-align:left;
-    padding:10px;
-    margin:0;
-}
-.nadpis2{
-  padding-bottom: 20px;
-}
-.container-list{
-    width:75%;
-    padding-top:20px;
-    margin:auto;
-    font-family: 'Space Mono', monospace;
-    margin-left:25%;
-}
-ul {
-    text-align:left;   
-    list-style-type:disc;
-    line-height: 1.5;
-}
-.list0{
-  margin-bottom:0;
-  display: flex;
-  flex-direction: column;
-}
-.list{
-  margin-top:0;
-  padding-bottom:20px;
-  display: flex;
-  flex-direction: column;
-}
-#tlacitko{
-    border-radius: 5px;
-    padding:5px;
-    font-family: 'Pacifico', cursive;
-}
-#tlacitko:hover{
-    cursor: pointer;
-}
-#datum{
-  margin-bottom:10px;
-}
-#ukol, #datum {
-    padding:5px;
-    border-radius: 3px;
-    font-family: 'Space Mono', monospace;
-}
-.button-erase {  
-    margin-left:10px;
-    border-radius: 5px;
-    padding:2px;
-    font-family: 'Pacifico', cursive;
-    cursor:pointer;
-}
-#todocolor{
-    position:absolute;
-    top:10px;
-    right:10px;
+  position: relative;
+  text-align: center;
+  width:60%;
+  margin:auto;
+  margin-top:100px;
+  background-color: #8080c0;
+  color:black;   
+  -webkit-box-shadow: 0px 0px 13px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 13px 2px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 13px 2px rgba(0,0,0,0.75);
+  border-radius: 7px;
+  font-family: 'East Sea Dokdo', cursive;
+  font-size: 1.6rem;
 }
 
+.caption1{
+  text-align: left;
+  padding: 10px;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.caption2{
+  padding-bottom: 20px;
+  font-family: 'Nerko One', cursive;
+  font-size: 2.3rem;
+}
+
+.pallet{
+  position: absolute;
+  top: 8px;
+  right: 83px;
+}
+
+.container-list{
+  width: 75%;
+  padding-top: 20px;
+  margin: auto;
+  margin-left: 30%;
+}
+@media only screen and (min-width:1700px){
+  .container-list{
+    margin-left: 35%;
+  }
+}
+
+ul {
+  text-align: left;   
+  list-style-type: disc;
+  line-height: 1.3;
+}
+
+.list0{
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.list{
+  margin-top: 0;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#btn{
+  border-radius: 5px;
+  padding: 5px;
+  font-family: 'East Sea Dokdo', cursive;
+  font-size: 1.5rem;
+}
+
+#btn:hover{
+  cursor: pointer;
+}
+
+#date{
+  margin-bottom: 10px;
+}
+
+#inputTask, #date {
+  padding: 5px;
+  border-radius: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.button-erase {  
+  margin-left: 10px;
+  border-radius: 5px;
+  padding: 13px;
+  cursor: pointer;
+  background-image: url(right-tick.svg);
+} 
+
+#todocolor{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
 
 /* --------------------animation--------------------- */
 
-
 .buble1, .buble2, .buble3, .buble4, .buble5, .buble6{
   position:absolute;
-  bottom:0;
-  border-radius:50%;
+  bottom: 0;
+  border-radius: 50%;
   background:#00aaffc9;
-  z-index:5;
+  z-index: 5;
 
 }
+
 .buble1{
-  right:500px;
+  right: 500px;
 }
+
 .buble2{
-  right:200px;
+  right: 200px;
 }
 
 .buble3{
   left:100px;
 }
+
 .buble4{
   bottom:30px;
   right:80px;
 }
+
 .buble5{
   bottom:-30px;
   left:500px;
 }
+
 .buble6{
   bottom:78px;
   right:300px;
 }
+
 @keyframes bubble-moving {
   0%{transform:translate(0,0);
   height:1px;
@@ -125,6 +156,7 @@ ul {
   height:75px;
   width:75px;}   
 }
+
 @keyframes bubbleshadow-moving {
   0%{transform:translate(0,0);
   height:1px;
@@ -137,12 +169,15 @@ ul {
 .bubbling12{
   animation:bubble-moving 3s linear infinite;
 }
+
 .bubbling34{
   animation:bubble-moving  linear 2.5s infinite;
 }
+
 .bubbling56{
   animation:bubble-moving linear 2s infinite;
 }
+
 /* --------------button buble----------------- */
 .btn_buble{
   height:60px;
@@ -161,20 +196,20 @@ ul {
 }
 
 .wave {
-opacity: .4;
-position: absolute;
-bottom:-5px;
-right:-5px;
-background: #0af;
-width: 70px;
-height: 70px;
-border-radius: 43%;
-animation: drift 3000ms infinite linear;
+  opacity: .4;
+  position: absolute;
+  bottom:-5px;
+  right:-5px;
+  background: #0af;
+  width: 70px;
+  height: 70px;
+  border-radius: 43%;
+  animation: drift 3000ms infinite linear;
 }
 
 @keyframes drift {
-from { transform: rotate(0deg); }
-from { transform: rotate(360deg); }
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
 }
 
 

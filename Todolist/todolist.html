@@ -5,27 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style-todo.css">
-    <link href="https://fonts.googleapis.com/css2?family=BioRhyme&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
     <title>To Do List</title>
 </head>
 
 <body>
     <div id="main">
-        <h4 class="nadpis1">ToDo list</h4>
-        <h1 class="nadpis2">My simple ToDo list</h1>
-        
+        <h4 class="caption1">ToDo list</h4>
+        <h1 class="caption2">My simple ToDo list</h1>
+
         <input type="color" id="todocolor" value="#8080c0">
-       
+        <img class="pallet" src="palett.png" alt="Color picker" width="35px">
 
         <form>
-            <input type="date" name="date" id="datum" required pattern="\d{4}-\d{2}-\d{2}"><br>
-            <input type="text" id="ukol" value="" size="50">
-            <input type="button" id="tlacitko" value="Add">          
+            <input type="date" name="date" id="date" required pattern="\d{4}-\d{2}-\d{2}"><br>
+            <input type="text" id="inputTask" value="" size="50">
+            <input type="button" id="btn" value="Add">
         </form>
 
         <div class="container-list">
-            <ul class="list0"> 
+            <ul class="list0">
                 <li class="task">Be positive</li>
                 <li class="task">Be happy with what you have</li>
             </ul>
@@ -34,18 +34,20 @@
             </ul>
         </div>
     </div>
+    
     <div class="buble_container">
         <div class="buble1 bubbling12"></div>
-        <div class="buble2 bubbling12"></div>  
+        <div class="buble2 bubbling12"></div>
         <div class="buble3 bubbling34"></div>
         <div class="buble4 bubbling34"></div>
         <div class="buble5 bubbling56"></div>
-        <div class="buble6 bubbling56"></div>  
-    </div>   
-        <div class="btn_buble">
-            <img src="btn_buble.svg" alt="Shut down bubling">
-            <div class='wave -one'></div>
-        </div>
+        <div class="buble6 bubbling56"></div>
+    </div>
+
+    <div class="btn_buble">
+        <img src="btn_buble.svg" alt="Shut down bubling">
+        <div class='wave -one'></div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="script.js"></script>
