@@ -1,7 +1,5 @@
-let number = 0;
-
 $(document).ready(function(){
- //localStorage.removeItem("pole");
+  //localStorage.removeItem("pole");
   document.getElementById('date').valueAsDate = new Date();
   reload();
   reloadColor();
@@ -13,7 +11,6 @@ function reload(){
   pole.forEach(addinglist);
 }
 
-
 function addinglist(item) {
   $(".list").append("<li class='task' id=todo"+number+">"+item+" "+"</li>");
   $("#todo"+number).append("<button class='button-erase' id="+number+"></button>");
@@ -21,8 +18,8 @@ function addinglist(item) {
 } 
 
 function reloadColor(){
-  color =  JSON.parse(localStorage.getItem('color-box'));
-  if (color != ''){
+  color = JSON.parse(localStorage.getItem('color-box'));
+  if (color !== ''){
     document.getElementById('main').style.backgroundColor = color;
     document.getElementById('todocolor').value = color;
   }
@@ -34,19 +31,20 @@ function clear(){
   }); 
 }
 
-function saveDataToLocalStorage(data)
-{
+function saveDataToLocalStorage(data){
   pole = JSON.parse(localStorage.getItem('pole')) || [];
   pole.push(data);
   localStorage.setItem('pole', JSON.stringify(pole));
 }
 
 
-$("#btn").on("click", () => { 
+$("form").submit(function (event){ 
+  event.preventDefault();
   let note = $("#inputTask").val();
   let date = $("#date").val()   
   saveDataToLocalStorage(date + " " + note);
   addinglist(date + " " + note);
+  $('input[name=checkListItem').val('');
 });
 
 function removeItem(id){
@@ -55,7 +53,7 @@ function removeItem(id){
   if (id > -1) {
     pole.splice(id, 1);
   }
-  console.table(pole);
+
   localStorage.setItem('pole', JSON.stringify(pole));
   clear();
   reload();
@@ -76,7 +74,7 @@ document.getElementById('todocolor').addEventListener('change', function(){
 
 //Shutdown bubling
 $(".btn_buble").on('click', function(){
-  $('.buble1, .buble2').toggleClass(' bubbling12');
-  $('.buble3, .buble4').toggleClass(' bubbling34');
-  $('.buble5, .buble6').toggleClass(' bubbling56');
+   $('.buble1, .buble2, .buble3, .buble4, .buble5, .buble6').toggle('stop');
 });
+
+
