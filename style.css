@@ -3,45 +3,47 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: rgb(58, 51, 51);
     display: flex;
     flex-direction: column;
-    height:100vh;
+    height: 100vh;
     margin: auto;
     position: relative;
-    font-family: 'Kalam', cursive;
+    font-family: "Kalam", cursive;
     max-width: 1500px;
 }
 
-h1{
+h1 {
     color: whitesmoke;
-    font-family: 'Permanent Marker', cursive;
+    font-family: "Permanent Marker", cursive;
 }
-.header{
+
+.header {
     position: relative;
-    top:0;
+    top: 0;
     width: 100%;
     display: flex;
     justify-content: center;
-    margin:10px;
-    height:10vh;
+    margin: 10px;
+    height: 10vh;
 }
-@media only screen and (max-width:600px){
+
+@media only screen and (max-width: 600px) {
     .header {
-        left:0;
+        left: 0;
         width: 100%;
-        height:10%;
-        margin:0;
+        height: 10%;
+        margin: 0;
         align-items: center;
-        height:15vh;
+        height: 15vh;
     }
 }
 
-
 /* --------------------Boxes with projects ---------------------------------*/
-.containers{
-    height:80vh;
+.containers {
+    height: 80vh;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -50,103 +52,108 @@ h1{
     width: 100%;
     background-color: rgb(100, 104, 100);
 }
-@media only screen and (max-width:600px){
+
+@media only screen and (max-width: 600px) {
     .containers {
-        height:70vh;
+        height: 70vh;
     }
 }
 
-.box{
+.box {
     display: flex;
     flex-direction: column;
-    flex: 1  0 30%;
+    flex: 1 0 30%;
     justify-content: center;
     align-items: center;
     min-height: 33vh;
     margin: 10px;
-    background-color:rgb(58, 51, 51);
-    position:relative;
+    background-color: rgb(58, 51, 51);
+    position: relative;
     overflow: hidden;
-
-}
-@media screen and (max-width:420px){
- .box{
-    flex: 1  0 80%; 
-    min-height:20vh;
- }
-}
-@media screen and (max-width:600px){
- .box{
-    flex: 1  0 40%; 
-    min-height:20vh;
- }
 }
 
-
-.animationBox::before{
-    content: '';
-    font-size: 1.5rem;
-    color:white;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    right: 0;                             
-    background-color: rgba(0, 0, 0, 0.9);
-    width: 100%;
-    height: 100%;                   
-    transform: translate(500px, -400px) rotate(180deg);                     
-    transition: transform .3s; 
-    z-index: 4;
-}
-.animationBox:hover::before{
-    transform: translate(0px,0px);       
-    transition: all 0.4s ease-in-out;  
-}
-.box-caption{
-    opacity:0;
-    position: absolute;
-    top:20px;
-    bottom:20px;
-    right:15px;
-    left:15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top:4px double white;
-    border-bottom:4px double white;
-    transition:all .4s linear;
-    z-index: 50;
-}
-.animationBox:hover .box-caption{
-    opacity: 1;
-}
-
-.goToProject{
-    border:1px solid white;
-    padding: 5px;
-    border-radius: 5px;;
-    text-decoration: none;
-    font-weight: bold;
-    opacity:0;
-    color:white;
-    font-size: 1.5rem;
-    transform: scale(1.7);                     
-    transition: transform .8s;
-    z-index: 99;
-}
-@media screen and (max-width:600px){
-    .goToProject{
-       font-size:1rem; 
+@media screen and (max-width: 420px) {
+    .box {
+        flex: 1 0 80%;
+        min-height: 20vh;
     }
 }
 
-.animationBox:hover .goToProject{
-    opacity:1;
-    transform: scale(1); 
-    transition: transform .4s;
+@media screen and (max-width: 600px) {
+    .box {
+        flex: 1 0 40%;
+        min-height: 20vh;
+    }
 }
 
-.caption{
+.animationBox::before {
+    content: "";
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    transform: translate(500px, -400px) rotate(180deg);
+    transition: all 0.4s ease-in-out;
+    z-index: 4;
+}
+
+.animationBox:hover::before {
+    transform: translate(0px, 0px);
+    transition: transform 0.5s ease-in-out;
+}
+
+.box-caption {
+    opacity: 0;
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    right: 15px;
+    left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 4px double white;
+    border-bottom: 4px double white;
+    transition: all 0.4s linear;
+    z-index: 50;
+}
+
+.animationBox:hover .box-caption {
+    opacity: 1;
+}
+
+.goToProject {
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    opacity: 0;
+    color: white;
+    font-size: 1.5rem;
+    transform: scale(1.7);
+    transition: transform 0.8s;
+    z-index: 99;
+}
+
+@media screen and (max-width: 600px) {
+    .goToProject {
+        font-size: 1rem;
+    }
+}
+
+.animationBox:hover .goToProject {
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 0.4s;
+}
+
+.caption {
     background-color: rgba(0, 0, 0, 0.8);
     position: absolute;
     bottom: 0;
@@ -159,63 +166,71 @@ h1{
     align-items: center;
     text-align: center;
 }
-.animationBox:hover .caption{
+
+.animationBox:hover .caption {
     transform: translate(0px, 100px);
-    transition: transform .3s; 
+    transition: transform 0.3s;
 }
-@media screen and (max-width:600px){
-    .caption{
-       font-size:16px; 
-       height: 50px;
+
+@media screen and (max-width: 600px) {
+    .caption {
+        font-size: 16px;
+        height: 50px;
     }
 }
 
-.background-memory{
-    background-image: url('images/memory_Game.png');
+.background-memory {
+    background-image: url("images/memory_Game.png");
     background-size: cover;
 }
 
-.background-gallery{
-    background-image: url('images/gallery.png');
+.background-gallery {
+    background-image: url("images/gallery.png");
     background-size: cover;
 }
 
 .background-bootstrap {
-    background-image: url('images/bootstrap.png');
+    background-image: url("images/bootstrap.png");
     background-size: cover;
 }
 
-.background-todolist{
-    background-image: url('images/todo.png'); 
+.background-todolist {
+    background-image: url("images/todolist.png");
     background-size: cover;
 }
 
-.background-memory, .background-gallery, .background-bootstrap,.background-todolist{
+.background-memory,
+.background-gallery,
+.background-bootstrap,
+.background-todolist {
     background-position: center;
     background-repeat: no-repeat;
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height: 100%; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.box:hover .background-memory, .box:hover .background-gallery, .box:hover .background-bootstrap, .box:hover .background-todolist {
-    filter:blur(5px);
+.box:hover .background-memory,
+.box:hover .background-gallery,
+.box:hover .background-bootstrap,
+.box:hover .background-todolist {
+    filter: blur(5px);
 }
 /* --------------------Footer ---------------------------------*/
-.footer{
-    height:10vh;
-    width:100%;
-    height:100px;
-    background-color: rgb(233, 181, 207);
+.footer {
+    height: 10vh;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(187, 164, 175);
     overflow: hidden;
     display: flex;
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    position:relative;;
-    bottom:0;
+    position: relative;
+    bottom: 0;
 }
 
 .footer p {
@@ -223,16 +238,16 @@ h1{
     padding: 10px;
     text-align: center;
 }
-@media only screen and (max-width:600px){
+
+@media only screen and (max-width: 600px) {
     .footer p {
         font-size: 0.8rem;
     }
 }
-@media only screen and (max-width:600px){
+
+@media only screen and (max-width: 600px) {
     .footer {
-        height:15vh;
+        height: 15vh;
         font-size: 0.8rem;
     }
 }
-
-
