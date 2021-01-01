@@ -1,204 +1,231 @@
-*{
-  padding:0;
-  margin:0;
+* {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
-body {
-  background: linear-gradient(to bottom, rgba(0, 141, 210, 0.63) 0%, rgba(0, 0, 0, 0) 100% );
+.container {
+  background: linear-gradient(to bottom, rgba(22, 125, 209, 0.849) 0%, rgba(252, 252, 252, 0.527) 100%);
   height: 100vh;
+}
+@media only screen and (max-width: 760px) {
+  .container {
+    background: linear-gradient(
+      to bottom,
+      rgba(20, 161, 231, 0.87) 0%,
+      rgb(83, 169, 212) 50%,
+      rgba(252, 252, 252, 0.527) 100%
+    );
+  }
 }
 
 #main {
   position: relative;
+  top: 15%;
   text-align: center;
-  width:60%;
-  margin:auto;
-  margin-top:100px;
-  background-color: #8080c0;
-  color:black;   
-  -webkit-box-shadow: 0px 0px 13px 2px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 13px 2px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 13px 2px rgba(0,0,0,0.75);
-  border-radius: 4px;
-  font-family: 'East Sea Dokdo', cursive;
-  font-size: 1.6rem;
-}
-
-.caption1{
-  text-align: left;
-  padding: 10px;
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.caption2{
-  padding-bottom: 20px;
-  font-family: 'Nerko One', cursive;
-  font-size: 2.3rem;
-}
-
-.pallet{
-  position: absolute;
-  top: 8px;
-  right: 83px;
-}
-
-.container-list{
-  padding-top: 20px;
+  width: 60%;
+  max-width: 900px;
   margin: auto;
-  margin-left: 30%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(193,252,141);
+  color: black;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  font-family: "Kalam", cursive;
+  z-index: 50;
+  overflow: hidden;
+  border-radius: 5px;
 }
-@media only screen and (min-width:1700px){
-  .container-list{
-    margin-left: 35%;
+@media only screen and (max-width: 760px) {
+  #main {
+    width: 100%;
+    top: 8%;
+    border-radius: 0;
   }
 }
 
-ul {
-  text-align: left;   
-  list-style-type: disc;
-  line-height: 1.3;
+.caption1 {
+  text-align: left;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-family: "Lobster", cursive;
 }
 
-.list0{
-  margin-bottom: 0;
-  display: flex;
-  flex-direction: column;
+.caption2 {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-family: "Lobster", cursive;
 }
 
-.list{
-  margin-top: 0;
-  padding-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-#btn{
-  border-radius: 5px;
-  padding: 5px;
-  font-family: 'East Sea Dokdo', cursive;
-  font-size: 1.5rem;
-}
-
-#btn:hover{
-  cursor: pointer;
-}
-
-#date{
-  margin-bottom: 10px;
-}
-
-#inputTask, #date {
-  padding: 5px;
-  border-radius: 3px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.button-erase {  
-  margin-left: 10px;
-  border-radius: 5px;
-  padding: 13px;
-  cursor: pointer;
-  background-image: url(right-tick.svg);
-} 
-
-#todocolor{
+.pallet {
   position: absolute;
   top: 10px;
   right: 10px;
 }
 
-/* --------------------animation--------------------- */
+.pallet:hover {
+  cursor: pointer;
+}
 
-.buble1, .buble2, .buble3, .buble4, .buble5, .buble6{
-  position:absolute;
+#todocolor {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 10px;
+}
+
+#inputTask {
+  padding: 8px 5px;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.container-list {
+  padding-top: 30px;
+  margin: auto;
+}
+
+ul {
+  text-align: left;
+  list-style-type: "»";
+  line-height: 1.3;
+  font-size: 1.3rem;
+  font-family: "Kalam", cursive;
+}
+
+.list0 {
+  margin-bottom: 0;
+}
+
+.list {
+  margin-top: 0;
+  padding-bottom: 20px;
+}
+
+#btn {
+  padding: 1px 10px;
+  font-family: "East Sea Dokdo", cursive;
+  font-size: 1.5rem;
+  background-color: rgb(172, 165, 165);
+  border: 1px solid rgb(63, 62, 62);
+  border-radius: 4px;
+  margin-left: 10px;
+}
+@media only screen and (max-width: 450px) {
+  #btn {
+    margin-top: 10px;
+  }
+}
+
+#btn:hover {
+  cursor: pointer;
+  color: white;
+  border-color: white;
+}
+
+.button-erase {
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+}
+.button-erase:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.bubble1, .bubble2, .bubble3,
+.bubble4, .bubble5, .bubble6 {
+  position: absolute;
   bottom: 0;
   border-radius: 50%;
-  background:#00aaffc9;
+  border: 2px solid rgb(16, 123, 211);
   z-index: 5;
-
 }
 
-.buble1{
-  right: 500px;
+.bubble1 {
+  right: 30%;
+  z-index: 51;
 }
 
-.buble2{
-  right: 200px;
+@media only screen and (max-width: 760px) {
+  .bubble1 {
+    opacity: 0;
+  }
 }
 
-.buble3{
-  left:100px;
+.bubble2 {
+  left: 10%;
 }
 
-.buble4{
-  bottom:30px;
-  right:80px;
+.bubble3 {
+  right: 9%;
 }
 
-.buble5{
-  bottom:-30px;
-  left:500px;
+.bubble4 {
+  left: 45%;
+  z-index: 51;
 }
 
-.buble6{
-  bottom:78px;
-  right:300px;
+.bubble5 {
+  left: 33%;
+}
+
+.bubble6 {
+  bottom: 78px;
+  right: 46%;
 }
 
 @keyframes bubble-moving {
-  0%{transform:translate(0,0);
-  height:1px;
-  width:1px;}
-  100%{transform:translate(0px,-650px); 
-  height:75px;
-  width:75px;}   
+  0% {
+    transform: translate(0, 0);
+    height: 1px;
+    width: 1px;
+  }
+  100% {
+    transform: translate(0px, -750px);
+    height: 75px;
+    width: 75px;
+  }
 }
 
-@keyframes bubbleshadow-moving {
-  0%{transform:translate(0,0);
-  height:1px;
-  width:1px;}
-  100%{transform:translate(0px,-650px); 
-  height:50px;
-  width:50px;}   
+.bubbling12 {
+  animation: bubble-moving 3.3s linear infinite;
 }
 
-.bubbling12{
-  animation:bubble-moving 3s linear infinite;
+.bubbling34 {
+  animation: bubble-moving linear 4s infinite;
 }
 
-.bubbling34{
-  animation:bubble-moving  linear 2.5s infinite;
+.bubbling56 {
+  animation: bubble-moving linear 3s infinite;
 }
 
-.bubbling56{
-  animation:bubble-moving linear 2s infinite;
-}
-
-/* --------------button buble----------------- */
-.btn_buble{
-  height:60px;
-  width:60px;
+.btn_bubble {
+  height: 60px;
+  width: 60px;
   position: fixed;
-  bottom:10px;
-  right:20px;
+  bottom: 10px;
+  right: 20px;
   border-radius: 50%;
   transform: translate3d(0, 0, 0);
-  box-shadow: 0 2px 30px rgba(black, .2);
+  box-shadow: 0 2px 30px rgba(black, 0.2);
   background: lighten(#f0f4c3, 10%);
+  z-index: 51;
 }
 
-.btn_buble:hover{
+.btn_bubble:hover {
   cursor: pointer;
 }
 
 .wave {
-  opacity: .4;
+  opacity: 0.4;
   position: absolute;
-  bottom:-5px;
-  right:-5px;
+  bottom: -5px;
+  right: -5px;
   background: #0af;
   width: 70px;
   height: 70px;
@@ -207,8 +234,10 @@ ul {
 }
 
 @keyframes drift {
-  from { transform: rotate(0deg); }
-  from { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
 }
-
-

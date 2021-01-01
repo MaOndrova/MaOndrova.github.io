@@ -1,60 +1,57 @@
-$(document).ready(function(){
-  //localStorage.removeItem("pole");
-  document.getElementById('date').valueAsDate = new Date();
+$(document).ready(function () {
   reload();
   reloadColor();
 });
 
-function reload(){
+function reload() {
   number = 0;
-  pole = JSON.parse(localStorage.getItem('pole')) || [];
-  pole.forEach(addinglist);
+  arrayTasks = JSON.parse(localStorage.getItem('arrayTasks')) || [];
+  arrayTasks.forEach(addinglist);
 }
 
 function addinglist(item) {
-  $(".list").append("<li class='task' id=todo"+number+">"+item+" "+"</li>");
-  $("#todo"+number).append("<button class='button-erase' id="+number+"></button>");
+  $(".list").append("<li class='task' id=todo" + number + ">" + item + " " + "</li>");
+  $("#todo" + number).append("<button class='button-erase' id=" + number + ">✔</button>");
   number++;
-} 
+}
 
-function reloadColor(){
+function reloadColor() {
   color = JSON.parse(localStorage.getItem('color-box'));
-  if (color !== ''){
+  if (color !== '') {
     document.getElementById('main').style.backgroundColor = color;
     document.getElementById('todocolor').value = color;
   }
 }
 
-function clear(){
-  $('.list li').each(function() {
-  $(this).remove();
-  }); 
+function clear() {
+  $('.list li').each(function () {
+    $(this).remove();
+  });
 }
 
-function saveDataToLocalStorage(data){
-  pole = JSON.parse(localStorage.getItem('pole')) || [];
-  pole.push(data);
-  localStorage.setItem('pole', JSON.stringify(pole));
+function saveDataToLocalStorage(data) {
+  arrayTasks = JSON.parse(localStorage.getItem('arrayTasks')) || [];
+  arrayTasks.push(data);
+  localStorage.setItem('arrayTasks', JSON.stringify(arrayTasks));
 }
 
 
-$("form").submit(function (event){ 
+$("form").submit(function (event) {
   event.preventDefault();
   let note = $("#inputTask").val();
-  let date = $("#date").val()   
-  saveDataToLocalStorage(date + " " + note);
-  addinglist(date + " " + note);
+  saveDataToLocalStorage(note);
+  addinglist(note);
   $('input[name=checkListItem').val('');
 });
 
-function removeItem(id){
-  pole = JSON.parse(localStorage.getItem('pole')) || [];
+function removeItem(id) {
+  arrayTasks = JSON.parse(localStorage.getItem('arrayTasks')) || [];
 
   if (id > -1) {
-    pole.splice(id, 1);
+    arrayTasks.splice(id, 1);
   }
 
-  localStorage.setItem('pole', JSON.stringify(pole));
+  localStorage.setItem('arrayTasks', JSON.stringify(arrayTasks));
   clear();
   reload();
 }
@@ -62,19 +59,21 @@ function removeItem(id){
 $('.container-list').on('click', '.button-erase', (event) => {
   var row = event.target.id;
   removeItem(row);
-  $(" li #todo"+row).remove();  
+  $(" li #todo" + row).remove();
 });
 
-// Changing background color
-document.getElementById('todocolor').addEventListener('change', function(){
+$("#pallet").click(function (event) {
+  $("#todocolor").click();
+});
+
+document.getElementById('todocolor').addEventListener('change', function () {
   let color = this.value;
   localStorage.setItem('color-box', JSON.stringify(color));
   document.getElementById('main').style.backgroundColor = color;
 });
 
-//Shutdown bubling
-$(".btn_buble").on('click', function(){
-   $('.buble1, .buble2, .buble3, .buble4, .buble5, .buble6').toggle('stop');
+$(".btn_bubble").on('click', function () {
+  $('.bubble1, .bubble2, .bubble3, .bubble4, .bubble5, .bubble6').toggle('stop');
 });
 
 
