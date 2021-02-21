@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll('.memory-card');
+const cards = document.querySelectorAll('.memoryCard');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
@@ -9,7 +9,7 @@ function flipCard() {
     if (lockBoard) return;
     if (this === firstCard) return;
     this.classList.toggle('flip');
-    music = new sound("sound.mp3");
+    music = new sound('sound.mp3');
     if (!hasFlippedCard) {
         //first click
         hasFlippedCard = true;
@@ -19,7 +19,6 @@ function flipCard() {
         //second click
         hasFlippedCard = false;
         secondCard = this;
-        // console.log(firstCard.dataset.framework);
         checkForMatch();
         numberOfAttempts++;
         document.getElementById('counting').innerText = 'Number of attempts: ' + numberOfAttempts;
@@ -95,7 +94,7 @@ function sound(src) {
     document.body.appendChild(this.sound);
     this.play = function(){
         this.sound.play();
-     }
+    }
     this.stop = function(){
         this.sound.pause();
     }    

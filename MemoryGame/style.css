@@ -3,54 +3,60 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body{
     height: 100vh;
-    max-width: 1900px;
-    background-color: #b3b3b3;
+    max-width: 2500px;
+    background-color:#b3b3b3;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.memory-game{
-    margin-top: 20px;
-    width:75%;
-    height: 640px;
+
+.memoryGame{
+    margin: 20px;
+    width: 75%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap:wrap; 
+    flex-wrap: wrap; 
     perspective: 1000px;  /*Give a 3D-positioned element some perspective*/
-}  
-.memory-card{
+} 
+
+.memoryCard{
     display: flex;
     align-items: center;
     width: calc(16.666% - 10px);
-    height: 33vh;
-    margin:5px;
+    height: 30vh;
+    margin: 5px;
     border-radius: 5px;
     position: relative;
     box-shadow: 0px 5px 9px 0px rgba(0,0,0,0.75);
-    background-color: white;
-    transform:scale(1);
+    background-color:white;
+    transform: scale(1);
     transform-style: preserve-3d;
-    transition:transform .5s;
+    transition: transform .5s;
 }
-.memory-card:active{
+
+.memoryCard:active{
     transform: scale(.97);
-    transition:transform .2s;
+    transition: transform .2s;
 }
-.memory-card.flip{
-    transform:rotateY(180deg);
+
+.memoryCard.flip{
+    transform: rotateY(180deg);
 }
-.front-face, .back-face{
+
+.frontFace, .backFace{
     width: 98%;
-    padding:5px;
+    padding: 5px;
     position: absolute;
-    background-color: white;
-    backface-visibility:hidden;
+    background-color:white;
+    backface-visibility: hidden;
 }
-.front-face{
-    transform:rotateY(180deg);
+
+.frontFace{
+    transform: rotateY(180deg);
 }
 
 .container{
@@ -58,35 +64,38 @@ body{
     justify-content: center;
     flex-direction: column;
     width: 230px;
-    height:150px;
-    background-color: white;
-    text-align:center;
+    height: 150px;
+    background-color:white;
+    text-align: center;
     font-family: sans-serif;
     border-radius: 5px;
     box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.75);
     border-radius: 10px;
 }
 
-#counting {
+#counting{
     font-weight: bold;
     font-size: 1.2rem;
-    padding:20px 5px;
+    padding: 20px 5px;
 }
+
 #btn{
-    font-size:20px;
-    padding:5px;
-    width:80px;
+    font-size: 20px;
+    padding: 5px;
+    width: 80px;
     align-self: center;
-    border-radius:5px;
+    border-radius: 5px;
     background-color: #853d85;
     color:white;
     box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
 }
-#btn:hover {
+
+#btn:hover{
     cursor: pointer;
-    background-color: #692869;
+    background-color:#692869;
 }
-#btn:active {
+
+#btn:active{
     box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
 }
 
