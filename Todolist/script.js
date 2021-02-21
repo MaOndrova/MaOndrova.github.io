@@ -6,27 +6,21 @@ $(document).ready(function () {
 function reload() {
   number = 0;
   arrayTasks = JSON.parse(localStorage.getItem('arrayTasks')) || [];
-  arrayTasks.forEach(addinglist);
-}
-
-function addinglist(item) {
-  $(".list").append("<li class='task' id=todo" + number + ">" + item + " " + "</li>");
-  $("#todo" + number).append("<button class='button-erase' id=" + number + ">✔</button>");
-  number++;
+  arrayTasks.forEach(addingList);
 }
 
 function reloadColor() {
-  color = JSON.parse(localStorage.getItem('color-box'));
+  color = JSON.parse(localStorage.getItem('colorBox'));
   if (color !== '') {
     document.getElementById('main').style.backgroundColor = color;
-    document.getElementById('todocolor').value = color;
+    document.getElementById('todoColor').value = color;
   }
 }
 
-function clear() {
-  $('.list li').each(function () {
-    $(this).remove();
-  });
+function addingList(item) {
+  $(".list").append("<li class='task' id=todo" + number + ">" + item + " " + "</li>");
+  $("#todo" + number).append("<button class='buttonErase' id=" + number + ">✔</button>");
+  number++;
 }
 
 function saveDataToLocalStorage(data) {
@@ -35,14 +29,19 @@ function saveDataToLocalStorage(data) {
   localStorage.setItem('arrayTasks', JSON.stringify(arrayTasks));
 }
 
-
 $("form").submit(function (event) {
   event.preventDefault();
   let note = $("#inputTask").val();
   saveDataToLocalStorage(note);
-  addinglist(note);
+  addingList(note);
   $('input[name=checkListItem').val('');
 });
+
+function clear() {
+  $('.list li').each(function () {
+    $(this).remove();
+  });
+}
 
 function removeItem(id) {
   arrayTasks = JSON.parse(localStorage.getItem('arrayTasks')) || [];
@@ -56,23 +55,23 @@ function removeItem(id) {
   reload();
 }
 
-$('.container-list').on('click', '.button-erase', (event) => {
+$('.containerList').on('click', '.buttonErase', (event) => {
   var row = event.target.id;
   removeItem(row);
-  $(" li #todo" + row).remove();
+  $("li #todo" + row).remove();
 });
 
 $("#pallet").click(function (event) {
-  $("#todocolor").click();
+  $("#todoColor").click();
 });
 
-document.getElementById('todocolor').addEventListener('change', function () {
+document.getElementById('todoColor').addEventListener('change', function () {
   let color = this.value;
-  localStorage.setItem('color-box', JSON.stringify(color));
+  localStorage.setItem('colorBox', JSON.stringify(color));
   document.getElementById('main').style.backgroundColor = color;
 });
 
-$(".btn_bubble").on('click', function () {
+$(".btnBubble").on('click', function () {
   $('.bubble1, .bubble2, .bubble3, .bubble4, .bubble5, .bubble6').toggle('stop');
 });
 

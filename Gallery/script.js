@@ -28,21 +28,21 @@ let currentPhoto = 0;
 let imagesData = [data1, data2, data3, data4, data5];
 
 imagesData.forEach((item, index) => {
-  $('#container-thumbnails').append(`<div class="box box${index}" data-index="${index}"><img src="${item.photo}" width="65" height="65" data-index="${index}"> <div class="title-thumbnail">${item.title}</div></div>`);
+  $('#containerThumbnails').append(`<div class="box box${index}" data-index="${index}"><img src="${item.photo}" width="65" height="65" data-index="${index}"> <div class="titleThumbnail">${item.title}</div></div>`);
 });
 
 let loadPhoto = (photoNumber) => {
   let newPhoto = $('#photo').attr('src', imagesData[photoNumber].photo);
   newPhoto.hide();
   newPhoto.fadeIn(800); 
-  $('#photo-title').text(imagesData[photoNumber].title);
-  $('#photo-description').text(imagesData[photoNumber].description);
+  $('#photoTitle').text(imagesData[photoNumber].title);
+  $('#photoDescription').text(imagesData[photoNumber].description);
   $(".box" + currentPhoto).css('transform','scale(1.2)');
-}
+};
 
 loadPhoto(currentPhoto);
 
-$('#right-arrow').click(() => {
+$('#rightArrow').click(() => {
   $(".box" + currentPhoto).css('transform','scale(1)');
   currentPhoto++;
   if (currentPhoto > (imagesData.length - 1)) {
@@ -51,9 +51,9 @@ $('#right-arrow').click(() => {
   loadPhoto(currentPhoto);
 
   $(".box" + currentPhoto).css('transform','scale(1.2)');
-})
+});
 
-$('#left-arrow').click(() => {
+$('#leftArrow').click(() => {
   $(".box" + currentPhoto).css('transform','scale(1)');
 
   currentPhoto--;
@@ -63,7 +63,7 @@ $('#left-arrow').click(() => {
   loadPhoto(currentPhoto);
 
   $(".box" + currentPhoto).css('transform','scale(1.2)');
-})
+});
 
 $('.box').click((event) => {
   $(".box" + currentPhoto).css('transform','scale(1)');
@@ -72,20 +72,21 @@ $('.box').click((event) => {
 
   $(".box" + currentPhoto).css('transform','scale(1.2)');
   $('#photo').attr('src', imagesData[currentPhoto].photo);
-  $('#photo-title').text(imagesData[currentPhoto].title);
-  $('#photo-description').text(imagesData[currentPhoto].description);
-  $('.gray-container').fadeIn();
+  $('#photoTitle').text(imagesData[currentPhoto].title);
+  $('#photoDescription').text(imagesData[currentPhoto].description);
+  $('.grayContainer').fadeIn();
 });
 
-$('.gray-container').click(() => {
-  $('.gray-container').fadeOut();
+$('.grayContainer').click(() => {
+  $('.grayContainer').fadeOut();
 });
 
-$( window ).resize(function() {
+$(window).resize(function() {
   let imgHeight = $('.foto img').height();
   $('.main').height(imgHeight);
 });
 
 $(window).on('load', function(){   
   let imgHeight = $('.foto img').height();
-  $('.main').height(imgHeight);});
+  $('.main').height(imgHeight);
+});

@@ -8,6 +8,7 @@
   background: linear-gradient(to bottom, rgba(22, 125, 209, 0.849) 0%, rgba(252, 252, 252, 0.527) 100%);
   height: 100vh;
 }
+
 @media only screen and (max-width: 760px) {
   .container {
     background: linear-gradient(
@@ -38,6 +39,7 @@
   overflow: hidden;
   border-radius: 5px;
 }
+
 @media only screen and (max-width: 760px) {
   #main {
     width: 100%;
@@ -70,7 +72,7 @@
   cursor: pointer;
 }
 
-#todocolor {
+#todoColor {
   display: none;
   position: absolute;
   top: 30px;
@@ -83,7 +85,7 @@
   border-radius: 4px;
 }
 
-.container-list {
+.containerList {
   padding-top: 30px;
   margin: auto;
 }
@@ -126,13 +128,13 @@ ul {
   border-color: white;
 }
 
-.button-erase {
+.buttonErase {
   margin-left: 10px;
   background-color: transparent;
   border: none;
   font-size: 1.5rem;
 }
-.button-erase:hover {
+.buttonErase:hover {
   cursor: pointer;
   color: white;
 }
@@ -179,7 +181,7 @@ ul {
   right: 46%;
 }
 
-@keyframes bubble-moving {
+@keyframes bubbleMoving {
   0% {
     transform: translate(0, 0);
     height: 1px;
@@ -193,18 +195,18 @@ ul {
 }
 
 .bubbling12 {
-  animation: bubble-moving 4.3s linear infinite;
+  animation: bubbleMoving 4.3s linear infinite;
 }
 
 .bubbling34 {
-  animation: bubble-moving linear 4.7s infinite;
+  animation: bubbleMoving linear 4.7s infinite;
 }
 
 .bubbling56 {
-  animation: bubble-moving linear 3.9s infinite;
+  animation: bubbleMoving linear 3.6s infinite;
 }
 
-.btn_bubble {
+.btnBubble {
   height: 60px;
   width: 60px;
   position: fixed;
@@ -213,7 +215,7 @@ ul {
   z-index: 51;
 }
 
-.btn_bubble:hover {
+.btnBubble:hover {
   cursor: pointer;
 }
 
